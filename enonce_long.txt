@@ -1,0 +1,33 @@
+ -----La clé publique est: n=1237628494855120146277 e=1889
+Premier bloc: valeur déchiffrée = 8246760659689496902 qui en texte donne 'Faut arr'
+-----Coded message -----
+string[] messages = new string[] {
+226905491547351657491,
+29303350887956589284,
+845523142555145488996,
+968537538077296496112,
+92489838631069700544,
+206498498802398447635,
+784938756087512618022,
+1164386543962890687994,
+435075501712401871845,
+148497277389271746571,
+650495660903785884214,
+44350639042950425229,
+1076041817559379216816,
+785368969822654944714,
+77472743028813380969,
+1013500368430178290633
+};
+-----End coded message -----
+
+Code int to string (version python)
+
+def decodemsg(M):
+    return M.to_bytes((M.bit_length() + 7) // 8, "little").decode("utf-8")
+
+def encode_msg(m):
+    m.encode('utf-8')
+    tmp = bytes(m, 'utf-8')
+    str = int.from_bytes(tmp, "little")
+    return str
