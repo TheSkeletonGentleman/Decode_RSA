@@ -1,6 +1,18 @@
 # Notes
 Vous pouvez mettre des notes ici :
 
+##### Le code qui était présent dans énnoné court et long
+Code int to string (version python)
+
+def decodemsg(M):
+    return M.to_bytes((M.bit_length() + 7) // 8, "little").decode("utf-8")
+
+def encode_msg(m):
+    m.encode('utf-8')
+    tmp = bytes(m, 'utf-8')
+    str = int.from_bytes(tmp, "little")
+    return str
+    
 ##### RSA
 p et q sont des nombres premiers
 
@@ -51,5 +63,5 @@ K test nég -> P(être premier) =~ 1-1/4^k
 ##### Miller-Rabin
 p premier ?
 p-1 = 2^s * i
-a^i ≡p 1
+a^i ≡ p 1
 a^(2^r * i) ≡p -1
